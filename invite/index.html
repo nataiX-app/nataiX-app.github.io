@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アプリを開いています...</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; text-align: center; padding: 40px 20px; color: #333; }
+    .btn { display: inline-block; padding: 14px 28px; background-color: #007AFF; color: #fff; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 20px; }
+    .tagline { color: #999; font-size: 13px; margin-top: 32px; }
+  </style>
+</head>
+<body>
+  <h2>App Storeへ移動中...</h2>
+  <p id="status">招待コードを確認しています</p>
+  <a id="store-link" href="#" class="btn" style="display:none;">ストアが開かない場合はこちら</a>
+  <p class="tagline">LexiRecall — 答えを見る前に、思い出そう。</p>
+
+  <script>
+    // LexiRecallは現状iOS専用。App Store IDが確定次第、下記を実際の値に置換する。
+    // 例: https://apps.apple.com/jp/app/lexirecall/id1234567890
+    const STORE_URL_IOS = "https://apps.apple.com/app/idXXXXXXXXX";
+
+    window.onload = async function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const code = urlParams.get('code');
+
+      document.getElementById('store-link').href = STORE_URL_IOS;
+      document.getElementById('store-link').style.display = 'inline-block';
+
+      if (code) {
+        try {
+          await navigator.clipboard.writeText(code);
+          document.getElementById('status').innerText = '招待コード(' + code + ')をコピーしました';
+        } catch (err) {
+          console.log('Clipboard copy failed:', err);
+        }
+      }
+
+      setTimeout(() => {
+        window.location.href = STORE_URL_IOS;
+      }, 800);
+    };
+  </script>
+</body>
+</html>
