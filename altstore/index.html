@@ -49,6 +49,7 @@
       border-radius: 12px;
       padding: 20px;
       margin-bottom: 20px;
+      overflow: hidden; /* カードからのはみ出しを防ぐ */
     }
     h2 {
       font-size: 1.2rem;
@@ -63,6 +64,7 @@
     a:hover {
       text-decoration: underline;
     }
+    
     /* [修正ポイント] BMACロゴ用スタイル */
     .bmac-link {
       display: inline-block;
@@ -79,7 +81,7 @@
     .bmac-logo:hover {
       transform: scale(1.05); /* 少し大きくする */
     }
-    
+
     footer {
       text-align: center;
       font-size: 0.85rem;
@@ -99,7 +101,16 @@
     <div class="card">
       <h2>Contact Us</h2>
       <p>If you encounter any issues, have questions, or want to suggest a feature, feel free to reach out:</p>
-      <p><strong>Email:</strong> <a href="mailto:nataiX@gmail.com">nataiX.support@gmail.com</a></p>
+      <p><strong>Email:</strong> <a href="mailto:nataiX.support@gmail.com">your-email@example.com</a></p>
+    </div>
+
+    <!-- [修正ポイント] Support Section -->
+    <div class="card" style="text-align: center;">
+      <h2>Support the Project</h2>
+      <p>If you enjoy using this app, consider supporting its development!</p>
+      <a href="https://buymeacoffee.com/nataiX" target="_blank" class="bmac-link" rel="noopener">
+        <img src="bmc-full-logo-no-background.png" alt="Buy Me a Coffee" class="bmac-logo">
+      </a>
     </div>
 
     <div class="card">
@@ -117,17 +128,7 @@
         <li><a href="https://xxx" target="_blank">Privacy Policy</a></li>
       </ul>
     </div>
-    
-    <div class="card">
-      <h2>Support the Project</h2>
-      <p>If you enjoy using this app, consider supporting its development!</p>
-      <div style="text-align: center; margin-top: 15px;">
-        <a href="https://buymeacoffee.com/nataiX" target="_blank" class="bmac-banner" rel="noopener">
-          <img src="bmc-full-logo-no-background.png" alt="Buy Me a Coffee" class="bmac-logo">
-        </a>
-      </div>
-    </div>
-    
+
     <footer>
       <p>&copy; 2026 nataiX. All rights reserved.</p>
     </footer>
