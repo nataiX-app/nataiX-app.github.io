@@ -63,6 +63,23 @@
     a:hover {
       text-decoration: underline;
     }
+    /* [修正ポイント] BMACロゴ用スタイル */
+    .bmac-link {
+      display: inline-block;
+      text-align: center;
+      text-decoration: none !color; /* リンクの下線を消す */
+    }
+    .bmac-logo {
+      max-width: 200px; /* ここでサイズを小さく固定 */
+      height: auto;     /* 縦横比を維持 */
+      display: block;
+      margin: 10px auto; /* センタリング */
+      transition: transform 0.2s ease; /* ホバー時のアニメーション */
+    }
+    .bmac-logo:hover {
+      transform: scale(1.05); /* 少し大きくする */
+    }
+    
     footer {
       text-align: center;
       font-size: 0.85rem;
