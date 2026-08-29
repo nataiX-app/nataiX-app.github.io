@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>App Support - [Your App Name]</title>
+  <title>App Support - KeepTether</title>
   <style>
     :root {
       --bg-color: #f9f9fb;
@@ -49,7 +49,7 @@
       border-radius: 12px;
       padding: 20px;
       margin-bottom: 20px;
-      overflow: hidden; /* カードからのはみ出しを防ぐ */
+      overflow: hidden;
     }
     h2 {
       font-size: 1.2rem;
@@ -65,21 +65,38 @@
       text-decoration: underline;
     }
     
-    /* [修正ポイント] BMACロゴ用スタイル */
+    /* AltStore ボタン用スタイル */
+    .btn-altstore {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: #ffffff;
+      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 10px;
+      margin-top: 10px;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+    .btn-altstore:hover {
+      opacity: 0.9;
+      text-decoration: none;
+    }
+
+    /* BMACロゴ用スタイル */
     .bmac-link {
       display: inline-block;
       text-align: center;
-      text-decoration: none !color; /* リンクの下線を消す */
+      text-decoration: none;
     }
     .bmac-logo {
-      max-width: 200px; /* ここでサイズを小さく固定 */
-      height: auto;     /* 縦横比を維持 */
+      max-width: 200px;
+      height: auto;
       display: block;
-      margin: 10px auto; /* センタリング */
-      transition: transform 0.2s ease; /* ホバー時のアニメーション */
+      margin: 10px auto;
+      transition: transform 0.2s ease;
     }
     .bmac-logo:hover {
-      transform: scale(1.05); /* 少し大きくする */
+      transform: scale(1.05);
     }
 
     footer {
@@ -98,13 +115,25 @@
       <p>Distributed via AltStore PAL</p>
     </header>
 
+    <!-- [追記箇所] 1段落目：AltStore PAL の紹介と追加リンク -->
+    <div class="card" style="text-align: center;">
+      <h2>Download & Install</h2>
+      <p>KeepTether is available for download on <strong>AltStore PAL</strong>. Tap the button below on your iPhone to add our source directly to AltStore PAL:</p>
+      <a href="altstore://source?url=https://nataix-app.github.io/altstore-repo/apps.json" class="btn-altstore">
+        Add Source to AltStore PAL
+      </a>
+      <p style="font-size: 0.85rem; color: #8e8e93; margin-top: 12px;">
+        If the button doesn't open automatically, copy this URL:<br>
+        <code>https://nataix-app.github.io/altstore-repo/apps.json</code>
+      </p>
+    </div>
+
     <div class="card">
       <h2>Contact Us</h2>
       <p>If you encounter any issues, have questions, or want to suggest a feature, feel free to reach out:</p>
-      <p><strong>Email:</strong> <a href="mailto:nataiX.support@gmail.com">your-email@example.com</a></p>
+      <p><strong>Email:</strong> <a href="mailto:nataiX.support@gmail.com">nataiX.support@gmail.com</a></p>
     </div>
 
-    <!-- [修正ポイント] Support Section -->
     <div class="card" style="text-align: center;">
       <h2>Support the Project</h2>
       <p>If you enjoy using this app, consider supporting its development!</p>
